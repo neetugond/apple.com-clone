@@ -18,6 +18,9 @@ const userSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    work: {
+        type: String,
+    },
     password: {
         type: String,
         required: true
@@ -68,8 +71,8 @@ userSchema.methods.generateAuthToken = async function () {
         // for generating token jwt sign
         // in sign need to pass two parameter one is payload(obj) and mush be unique we have _id and another is secret key
         let gentoken = jwt.sign({ _id: this._id }, process.env.SECRET_KEY); //generate token done
-        this.tokens = this.tokens.concat({ token: gentoken }) 
-        await this.save();
+        this.tokens = this.tokens.concat({ token: gentoken }) //for adding concate
+        await this.save(); //need to save
         return gentoken;
     
     } catch (err){
@@ -78,6 +81,10 @@ userSchema.methods.generateAuthToken = async function () {
     
 }
 
+
+// now we need to attach this document with our project we can do that with the help of model = collection create
+
+// first letter should be capital letter USER - name of the collection which we are creating it will automatically become plural in database userSchema- document structure which we created above
 
 // connected document with collection
 const User = mongoose.model("USER", userSchema)
