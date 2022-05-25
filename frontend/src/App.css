@@ -243,3 +243,13 @@
   margin: auto;
   margin-top: 10%;
 }
+
+/* sign in */
+
+.signin-main-div, .signup-main-div{
+  border: 1px solid red;
+  width: 30%;
+  margin: auto;
+  margin-top: 10%;
+  align-items: center;
+}

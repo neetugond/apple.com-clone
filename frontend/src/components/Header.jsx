@@ -57,7 +57,7 @@ const Header = () => {
                   <NavLink style={{ color: 'white'}} to="/register">
                   <Tab label="Register"  />
                   </NavLink>
-                  <NavLink style={{ color: 'white'}} to="/login">
+                  <NavLink style={{ color: 'inherit'}} to="/login">
                     <Tab label="login" />
                   </NavLink>
                   </Tabs>

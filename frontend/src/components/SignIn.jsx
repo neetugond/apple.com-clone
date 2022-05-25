@@ -2,7 +2,7 @@ import React from 'react'
 import {NavLink} from 'react-router-dom'
 import { Button } from '@mui/material'
 import EmailIcon from '@mui/icons-material/Email';
-import PasswordIcon from '@mui/icons-material/Password';
+import LockIcon from '@mui/icons-material/Lock';
 import GoogleIcon from '@mui/icons-material/Google';
 
 const SignIn = () => {
@@ -19,7 +19,7 @@ const SignIn = () => {
             <input type="text" placeholder='Enter your Email' />
         </div>
         <div className='signin-input-div'>
-            <span className='signin-icon'><PasswordIcon/></span>
+            <span className='signin-icon'><LockIcon/></span>
             <input type="text" placeholder='Enter your Password' />
         </div>
       

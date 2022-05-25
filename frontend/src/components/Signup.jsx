@@ -4,7 +4,7 @@ import { Button } from '@mui/material'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import EmailIcon from '@mui/icons-material/Email';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import PasswordIcon from '@mui/icons-material/Password';
+import LockIcon from '@mui/icons-material/Lock';
 import axios from "axios"
 
 const Signup = () => {
@@ -13,7 +13,6 @@ const Signup = () => {
         name: "",
         email: "",
         phone: "",
-        work : "",
         password: "",
         cpassword: ""
 
@@ -32,8 +31,10 @@ const Signup = () => {
         })
     }
 
-  return (
-      <div className='signup-main-div'>
+    return (
+      
+        <div className='signup-main-div'>
+            <form action="">
           <h4>
               Create your account
           </h4>
@@ -41,27 +42,23 @@ const Signup = () => {
 
               
               <div className='signup-input-div'>
-                  <span className='signup-icon'><AccountCircleIcon/></span>
+                  <label className='signup-icon'><AccountCircleIcon/></label>
                   <input id='name' onChange={handleInputs}  type="text" placeholder='Enter your name' />
               </div>
               <div className='signup-input-div'>
-                  <span className='signup-icon'> <EmailIcon/></span>
+                  <label className='signup-icon'> <EmailIcon/></label>
                   <input id='email' onChange={handleInputs} type="text" placeholder='Enter your email' />
               </div>
               <div className='signup-input-div'>
-                  <span className='signup-icon'> <LocalPhoneIcon/></span>
+                  <label className='signup-icon'> <LocalPhoneIcon/></label>
                   <input id='phone' onChange={handleInputs}  type="text" placeholder='Enter your mobile no.' />
               </div>
               <div className='signup-input-div'>
-                  <span className='signup-icon'> <LocalPhoneIcon/></span>
-                  <input id='work' onChange={handleInputs}  type="text" placeholder='Enter your work' />
-              </div>
-              <div className='signup-input-div'>
-                  <span className='signup-icon'><PasswordIcon/></span>
+                  <label className='signup-icon'><LockIcon/></label>
                   <input id='password' onChange={handleInputs}  type="text" placeholder='create password' />
               </div>
               <div className='signup-input-div'>
-                  <span className='signup-icon'><PasswordIcon/></span>
+                  <label className='signup-icon'><LockIcon/></label>
                   <input id='cpassword' onChange={handleInputs}  type="text" placeholder='confirm password' />
               </div>
 
@@ -70,7 +67,7 @@ const Signup = () => {
           <div className="signup-login-main">
           <NavLink to='/login' className='signup-login'>I am already register</NavLink>
           </div>
-         
+          </form>
           
     </div>
   )
