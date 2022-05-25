@@ -53,10 +53,14 @@ const Header = () => {
                    <Tab label="Watch" />
                    <Tab label="AirPods" />
                    <Tab label="TV & Home"/>
-                   <Tab label="Only on Apple"/>
-                   <Tab label="Accessories" />
-                   <Tab label="Support" />
-                 </Tabs>
+                  <Tab label="Only on Apple" />
+                  <NavLink style={{ color: 'white'}} to="/register">
+                  <Tab label="Register"  />
+                  </NavLink>
+                  <NavLink style={{ color: 'white'}} to="/login">
+                    <Tab label="login" />
+                  </NavLink>
+                  </Tabs>
                 <SearchIcon />
                 <ShoppingBagOutlinedIcon />
                 <span>{cartTotalQuantity }</span>

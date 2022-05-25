@@ -13,6 +13,8 @@ import CheckOut from './components/Checkout'
 import { ToastContainer } from 'react-toastify'
 import PaymentPage from './components/PaymentForm'
 import Review from './components/Review'
+import Login from './components/SignIn'
+import Signup from './components/Signup'
 
 function App() {
 
@@ -29,6 +31,10 @@ function App() {
         <Route exact path="/checkout" element={<CheckOut></CheckOut>} />
         <Route exact path="/payment" element={<PaymentPage></PaymentPage>} />
         <Route exact path="/review" element={<Review></Review>} />
+        <Route path='/login' element={<Login></Login>}>
+        </Route>
+        <Route path='/register' element={<Signup></Signup>}>
+        </Route>
       </Routes>
       <Footer/>
     </>
