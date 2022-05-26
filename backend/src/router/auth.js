@@ -10,10 +10,10 @@ const User = require('../model/userSchema')
 // using async await
 router.post("/register", async (req, res) => {
     // array destructring to avoid req.body.name 
-    const { name, email, phone, password, cpassword } = req.body
+    const { name, email, password, cpassword } = req.body
     // if any of the details missing error show 
     // validation
-    if (!name || !email || !phone || !password || !cpassword) {
+    if (!name || !email || !password || !cpassword) {
         return res.status(422).json({ error: "plz filled the field properly" });
     }
     
@@ -24,7 +24,7 @@ router.post("/register", async (req, res) => {
         } else if (password != cpassword) {
             return res.status(422).json({error: "password are not matching"})
         } else {
-            const user = new User({ name, email, phone, password, cpassword });
+            const user = new User({ name, email, password, cpassword });
 
             // here brcypt pre middleware 
     

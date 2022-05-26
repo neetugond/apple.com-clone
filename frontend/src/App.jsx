@@ -13,8 +13,8 @@ import CheckOut from './components/Checkout'
 import { ToastContainer } from 'react-toastify'
 import PaymentPage from './components/PaymentForm'
 import Review from './components/Review'
-import Login from './components/SignIn'
-import Signup from './components/Signup'
+import Login from './components/login/Login'
+import Signup from './components/signup/Signup'
 
 function App() {
 

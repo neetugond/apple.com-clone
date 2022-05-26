@@ -12,6 +12,8 @@ require('./src/db/conn')
 // const User = require('./model/userSchema')
 
 app.use(express.json())
+app.use(express.urlencoded())
+app.use(cors())
 
 // middleware- we link the router files to make our routes easy
 app.use(require("./src/router/auth"))
