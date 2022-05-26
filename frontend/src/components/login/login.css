@@ -22,7 +22,7 @@
     font-size: 1rem;
 }
 
-.login > .button{
+.button-login{
     background-color: black;
     border: 1px solid grey;
     color: white;

@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import "./signup.css"
 import axios from 'axios'
+import { Link, useNavigate} from "react-router-dom";
 
 export default function SignUp() {
+  const navigate = useNavigate()
+       const [toggle, setToggle] = useState(false);
         const [user, setUser] = useState({
             name: "",
             email: "",
             password: "",
-            cpassword: ""
+            role: "",
 
         });
 
@@ -16,19 +19,18 @@ export default function SignUp() {
             // name = e.target.name;
             // value = e.target.value.
             const { name, value } = e.target
-            setUser({ ...user, [name]: value })
+          setUser({ ...user, [name]: value });
+          user.name !== "" && user.email !== "" && user.password !== "" && user.role !== "" ? (
+           setToggle(false)
+          ) : (
+              <></>
+          )
+          console.log("user", user);
         };
   const postData = () => {
-    // e.preventDefault();
-    const { name, email, password, cpassword } = user
-    if (name && email && (password === cpassword)) {
-      axios.post("http://localhost:5000/register", user)
-        .then(res => console.log(res));
-      // alert("User Created")
-     } else {
-      alert("invalid Input")
-    }
-  }     
+    axios.post("http://localhost:5000/register", user).then((res) => {
+    });
+  };    
 
     //   const postData =  () => {
     //     // e.preventDefault();
@@ -68,10 +70,21 @@ export default function SignUp() {
       <input type="text" name='name' value={user.name} placeholder='Enter your Name'  onChange={handleChange} />
       <input type="text" name='email' value={user.email} placeholder='Enter your Email' onChange={handleChange} />
       <input type="password" name='password' value={user.password} placeholder="Enter your Password"  onChange={handleChange}/>
-      <input type="password" name='cpassword' value={user.cpassword} placeholder="confirm Password"  onChange={handleChange}/>
-    <div className="button" onClick={postData}>Register</div>
+      <input type="text" name='role' value={user.role} placeholder="role" onChange={handleChange} />
+      
+       <div className="button-register" >
+      <Link to="/login">
+        <button type='submit' onClick={postData} disabled={toggle}>Register</button>
+        </Link>
+        </div>
     <div>or</div>
-    <div className="button">Login</div>
+      <div className="button-register" onClick={()=> navigate('/login')}>
+        {/* <Link to="/login"> */}
+          {/* <button> */}
+            Login
+            {/* </button> */}
+          {/* </Link> */}
+      </div>
   </div>
   );
 }

@@ -1,5 +1,6 @@
 import './App.css'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle'
 import "react-toastify/dist/ReactToastify.css"
@@ -17,26 +18,44 @@ import Login from './components/login/Login'
 import Signup from './components/signup/Signup'
 
 function App() {
+  const isAuthToken = useSelector((state) => state.tokenLogin.token);
+  console.log('isAuthToken', isAuthToken);
 
+  let location = useLocation();
+  const PrivateRouteBuy = ({ isAuthToken, children }) => {
+    return isAuthToken == "" || isAuthToken==null ? (
+      <Navigate to="/register" state={{ from: location }} replace />
+    ) : (
+      children
+    );
+  };
   return (
 
     <>
-      <ToastContainer/>
-      <Header/>
+      <ToastContainer />
+      <Header />
       <Routes>
         <Route exact path="/" element={<Home></Home>} />
-        <Route exact path="/product" element={<Product />} />
-        <Route exact path="/product/:id" element={<ProductDetail/>}/>
-        <Route exact path="/cart" element={<Cart></Cart>} />
-        <Route exact path="/checkout" element={<CheckOut></CheckOut>} />
-        <Route exact path="/payment" element={<PaymentPage></PaymentPage>} />
-        <Route exact path="/review" element={<Review></Review>} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/cart" element={<Cart></Cart>} />
+        <Route path="/payment" element={<PaymentPage></PaymentPage>} />
+        <Route path="/review" element={<Review></Review>} />
         <Route path='/login' element={<Login></Login>}>
         </Route>
         <Route path='/register' element={<Signup></Signup>}>
         </Route>
+        <Route
+          path="/checkout"
+          element={
+            <PrivateRouteBuy isAuthToken={isAuthToken}>
+              {" "}
+              <CheckOut />
+            </PrivateRouteBuy>
+          }
+        ></Route>
       </Routes>
-      <Footer/>
+      <Footer />
     </>
   )
 }

@@ -22,7 +22,7 @@
     font-size: 1rem;
 }
 
-.register > .button{
+.register > .button-register{
     background-color: black;
     border: 1px solid grey;
     color: white;
@@ -32,4 +32,10 @@
     border-radius: 8px;
     outline: none;
     cursor: pointer;
+}
+
+.button-register > button{
+    background-color: black;
+    border: none;
+    color: white;
 }
