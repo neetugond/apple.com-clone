@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./signup.css"
-// import axios from 'axios'
+import axios from 'axios'
 
 export default function SignUp() {
         const [user, setUser] = useState({
@@ -18,13 +18,48 @@ export default function SignUp() {
             const { name, value } = e.target
             setUser({ ...user, [name]: value })
         };
-//         const postData =  () => {
-//             // e.preventDefault();
-//             axios.post("http://localhost:5000/register", user).then((res) => {
-//                 console.log(res.data.token.split(".")[0]);
-//                 alert("User Created")
-//             })
-// }
+  const postData = () => {
+    // e.preventDefault();
+    const { name, email, password, cpassword } = user
+    if (name && email && (password === cpassword)) {
+      axios.post("http://localhost:5000/register", user)
+        .then(res => console.log(res));
+      // alert("User Created")
+     } else {
+      alert("invalid Input")
+    }
+  }     
+
+    //   const postData =  () => {
+    //     // e.preventDefault();
+    //     axios.post("http://localhost:5000/register", user).then((res) => {
+    //         console.log(res.data.token.split(".")[0]);
+    //         alert("User Created")
+    //     })
+    //     const { name, email, password, cpassword } = user;
+    //     const res = await fetch("/register", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //             // 'Accept': 'application/json'
+
+    //         },
+    //         //server doesn't understand json only want data formate in string
+    //         body: JSON.stringify({
+    //             name, email, password, cpassword //key value same
+    //         })
+    //     });
+    //     const data = await res.json();
+    //     if (data.status === 422 || !data) {
+    //         window.alert("Invalid Registration")
+    //         console.log("Invalid Registration")
+    //     } else {
+    //         window.alert("Registration successfull")
+    //         console.log("Registration successfull")
+
+    //         navigate.push("/login");
+    //     }
+    //  }
 
   return (
     <div className='register'>
@@ -34,7 +69,7 @@ export default function SignUp() {
       <input type="text" name='email' value={user.email} placeholder='Enter your Email' onChange={handleChange} />
       <input type="password" name='password' value={user.password} placeholder="Enter your Password"  onChange={handleChange}/>
       <input type="password" name='cpassword' value={user.cpassword} placeholder="confirm Password"  onChange={handleChange}/>
-    <div className="button">Register</div>
+    <div className="button" onClick={postData}>Register</div>
     <div>or</div>
     <div className="button">Login</div>
   </div>

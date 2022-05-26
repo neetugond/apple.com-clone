@@ -1,10 +1,6 @@
-
 const bcrypt = require('bcryptjs')
-
 const express = require('express');
-
 const router = express.Router();
-
 const User = require('../model/userSchema')
 
 // using async await
@@ -42,7 +38,7 @@ router.post("/register", async (req, res) => {
 
 // login
 
-router.post("/signin", async (req, res) => {
+router.post("/login", async (req, res) => {
     // console.log(req.body);
     // res.json({message:"awesome"})
     

@@ -4,6 +4,7 @@ const catchAsyncErrors = require('../middleware/catchAsyncError');
 const ApiFeatures = require('../utils/apifeatures');
 // instead of doing again and again try catch make error handling middleware
 
+// admin route
 exports.createProduct = catchAsyncErrors(
     async (req, res, next) => {
         const product = await Product.create(req.body);

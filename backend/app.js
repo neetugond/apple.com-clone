@@ -1,6 +1,7 @@
 const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const express = require('express')
+const cors = require('cors')
 
 const app = express();
 
@@ -38,24 +39,24 @@ app.get('/', (req, res) => {
     //this get ignore becoz on line no 16 we have require home page from auth.js and once it get thw data below everything get ignore
 })
 
-app.get('/about', middleware, (req, res) => {
-    console.log("about")
-    res.send("hello world from the about")
-})
+// app.get('/about', middleware, (req, res) => {
+//     console.log("about")
+//     res.send("hello world from the about")
+// })
 
-app.get('/contact', (req, res) => {
-    res.cookie('test', 'neetu')
-    res.send("hello world from the contact")
+// app.get('/contact', (req, res) => {
+//     res.cookie('test', 'neetu')
+//     res.send("hello world from the contact")
 
-})
+// })
 
-app.get('/login', (req, res) => {
-    res.send("hello world from the login page")
+// app.get('/login', (req, res) => {
+//     res.send("hello world from the login page")
 
-})
+// })
 
-// app.get('/signup', (req, res) => {
-//     res.send("hello world from the signup page")
+// app.get('/register', (req, res) => {
+//     res.send(req.body)
 
 // })
 // console.log("this is my first mern project")
