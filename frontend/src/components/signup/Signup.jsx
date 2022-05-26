@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import "./signup.css"
 import axios from 'axios'
-import { Link, useNavigate} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function SignUp() {
-  const navigate = useNavigate()
        const [toggle, setToggle] = useState(false);
         const [user, setUser] = useState({
             name: "",
@@ -29,6 +28,7 @@ export default function SignUp() {
         };
   const postData = () => {
     axios.post("http://localhost:5000/register", user).then((res) => {
+      console.log(res.data.token.split(".")[0]);
     });
   };    
 
@@ -72,18 +72,16 @@ export default function SignUp() {
       <input type="password" name='password' value={user.password} placeholder="Enter your Password"  onChange={handleChange}/>
       <input type="text" name='role' value={user.role} placeholder="role" onChange={handleChange} />
       
-       <div className="button-register" >
+       <div className="button" >
       <Link to="/login">
         <button type='submit' onClick={postData} disabled={toggle}>Register</button>
         </Link>
         </div>
     <div>or</div>
-      <div className="button-register" onClick={()=> navigate('/login')}>
-        {/* <Link to="/login"> */}
-          {/* <button> */}
-            Login
-            {/* </button> */}
-          {/* </Link> */}
+      <div className="button">
+      <Link to="/login">
+          Login
+          </Link>
       </div>
   </div>
   );

@@ -1,11 +1,14 @@
-const dotenv = require('dotenv')
+
 const express = require('express')
 const cors = require('cors')
 
 const app = express();
 
 // to access dotenv we need to give path of file config.env
-dotenv.config({ path: './src/config.env' });
+if (process.env.NODE_ENV !== "PRODUCTION") {
+    require('dotenv').config({ path: './src/config.env' });
+}
+
 require('./src/db/conn')
 app.use(express.json())
 app.use(cors({ origin: "*" }));

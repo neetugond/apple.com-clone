@@ -1,4 +1,5 @@
 import './App.css'
+import {useState} from 'react'
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
@@ -18,17 +19,18 @@ import Login from './components/login/Login'
 import Signup from './components/signup/Signup'
 
 function App() {
-  const isAuthToken = useSelector((state) => state.tokenLogin.token);
-  console.log('isAuthToken', isAuthToken);
+  const [user, setLoginUser] = useState({})
+  // const isAuthToken = useSelector((state) => state.tokenLogin.token);
+  // console.log('isAuthToken', isAuthToken);
 
-  let location = useLocation();
-  const PrivateRouteBuy = ({ isAuthToken, children }) => {
-    return isAuthToken == "" || isAuthToken==null ? (
-      <Navigate to="/register" state={{ from: location }} replace />
-    ) : (
-      children
-    );
-  };
+  // let location = useLocation();
+  // const PrivateRoute = ({ isAuthToken, children }) => {
+  //   return isAuthToken == "" || isAuthToken==null ? (
+  //     <Navigate to="/login" state={{ from: location }} replace />
+  //   ) : (
+  //     children
+  //   );
+  // };
   return (
 
     <>
@@ -45,15 +47,16 @@ function App() {
         </Route>
         <Route path='/register' element={<Signup></Signup>}>
         </Route>
-        <Route
+        <Route path="/checkout" element={<CheckOut/>}></Route>
+        {/* <Route
           path="/checkout"
           element={
-            <PrivateRouteBuy isAuthToken={isAuthToken}>
+            <PrivateRoute isAuthToken={isAuthToken}>
               {" "}
               <CheckOut />
-            </PrivateRouteBuy>
+            </PrivateRoute>
           }
-        ></Route>
+        ></Route> */}
       </Routes>
       <Footer />
     </>
