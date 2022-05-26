@@ -16,11 +16,14 @@ exports.createProduct = async (req, res, next) => {
 // get all the product route
 exports.getAllProducts = async (req, res) => {
     try {
-        const apifeatures = new ApiFeatures(Product.find(), req.query).search()
+        const resultPerPage = 6;
+        const productCount = await Product.countDocuments();
+        const apifeatures = new ApiFeatures(Product.find(), req.query).search().filter().pagination(resultPerPage)
         const products = await apifeatures.query;
         res.status(200).json({
             success: true,
-            products
+            products,
+            productCount
         })
       } catch (err) {
         return res.status(500).send({ Error: err.message });

@@ -18,7 +18,7 @@ app.use(express.json())
 const product = require('./src/routes/productRoutes')
 app.use("/api", product)
 // middleware- we link the router files to make our routes easy
-app.use(require("./src/router/auth"))
+app.use(require("./src/controllers/userController"))
 
 // how to access the connection from env file (process.env.givevaluename)
 
