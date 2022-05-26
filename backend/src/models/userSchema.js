@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
+const validator = require('validator')
 // document structure defined
 const userSchema = new mongoose.Schema({
     name: {
@@ -16,7 +17,7 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
-        minlength:[8, "Password should be greater than 8 characters"]
+        // minlength:[8, "Password should be greater than 8 characters"]
     },
     role: [
         {
@@ -25,7 +26,7 @@ const userSchema = new mongoose.Schema({
         }
     ],
 
-}
+},
 {
     timestamps: true,
     versionKey: false,
