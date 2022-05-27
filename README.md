@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Clone of apple.com
+An e-commerce website apple.com, the innovative world of Apple and shop everything iPhone, iPad, Apple Watch, Mac, and Apple TV, plus explore accessories, entertainment etc.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Features:
+Mern project development-
+Register and login page with authentication
+Home page.
+Product page with the all required functionality like sorting and filtering.
+Product details page.
+Cart page with the all the require functionlity like user can increase or decrease the item, can remove perticular item and can remove all the item at once.
+Checkout page - user can filled all the detail and can also see how much need to pay total.
+Payment page.
+Order detail page.
 
-## Available Scripts
+# Screen Shots
 
-In the project directory, you can run:
+<p>Home Page</p>
+<a href="https://ibb.co/35bHHm2"><img src="https://i.ibb.co/Ngqzz25/apple-homepage.png" alt="apple-homepage" border="0"></a>
 
-### `npm start`
+<p>Registration Page</p>
+<a href="https://ibb.co/K7MNS5g"><img src="https://i.ibb.co/6b3vLyS/Screenshot-787.png" alt="Screenshot-787" border="0"></a>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<p>Login Page</p>
+<a href="https://ibb.co/sbYKVs9"><img src="https://i.ibb.co/Dz29Rwf/Screenshot-788.png" alt="Screenshot-788" border="0"></a>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p>Product Page</p>
+<a href="https://ibb.co/sbnx5L3"><img src="https://i.ibb.co/PFKXTBC/Screenshot-778.png" alt="Screenshot-778" border="0"></a>
 
-### `npm test`
+<p>Product details page<p>
+<a href="https://ibb.co/yg8GGnz"><img src="https://i.ibb.co/nQDZZsX/Screenshot-780.png" alt="Screenshot-780" border="0"></a>
+  
+<p>Cart Page</p>
+<a href="https://ibb.co/XVy7PvY"><img src="https://i.ibb.co/6NvHSfX/Screenshot-781.png" alt="Screenshot-781" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>free photo uploads</a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p>Checkout Page<p>
+<a href="https://ibb.co/Yf7kMFZ"><img src="https://i.ibb.co/c2cFHSL/Screenshot-782.png" alt="Screenshot-782" border="0"></a>
 
-### `npm run build`
+<p>Payment Page</p>
+<a href="https://ibb.co/ZLsCVdt"><img src="https://i.ibb.co/xCvQDhP/Screenshot-783.png" alt="Screenshot-783" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>free pic uploader</a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p>Order detail Page<p>
+<a href="https://ibb.co/Qns67w6"><img src="https://i.ibb.co/mtQHrWH/Screenshot-784.png" alt="Screenshot-784" border="0"></a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Run Locally
+npm start
